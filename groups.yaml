@@ -1,0 +1,133 @@
+#Views
+
+  primary_view:
+    name: Primary
+    view: yes
+    entities:
+      - group.downstairs
+      - group.upstairs
+      - group.location
+      - group.seasonal
+
+  rooms_view:
+    name: Rooms
+    view: yes
+    entities:
+      - group.kitchen
+      - group.dining_room
+      - group.living_room
+      - group.bedroom
+
+#not views
+#Rooms
+  kitchen:
+    name: Kitchen
+    entities:
+      - light.overhead
+      - light.sink
+      - light.wall
+      - light.cabinets
+
+  dining_room:
+    name: Dining Room
+    entities:
+      - light.dining_room_1
+      - light.dining_room_2
+      - light.dining_room_3
+
+  living_room:
+    name: Living Room
+    entities:
+      - light.big_lamp
+      - light.small_lamp
+      - switch.twinkle
+      - switch.glass_door
+
+  bedroom:
+    name: Bedroom
+    entities:
+      - light.bedroom_1
+      - light.bedroom_2
+
+###
+  downstairs:
+    name: Downstairs
+    entities:
+      - sensor.broadlink_sensor_temperature
+      - group.living_room
+      - group.dining_room
+      - group.kitchen
+      - script.movie_time
+      - script.sleep
+      - scene.wake_up
+
+  upstairs:
+    name: Upstairs
+    entities:
+      - group.bedroom
+      - scene.bright
+      - scene.mid
+      - scene.dim
+
+  temperature:
+    name: Temperature
+    entities:
+      - sensor.broadlink_sensor_temperature
+
+  seasonal:
+    name: Seasonal
+    entities:
+      - switch.christmas_lights_m_t
+      - switch.stairs
+      - switch.front_window
+
+  broadlink:
+    name: Broadlink
+    entities:
+      - switch.lg_onoff
+      - switch.stereo_onoff
+      - switch.lg_home
+      - switch.lg_play
+      - switch.lg_pause
+      - switch.lg_up
+      - switch.lg_down
+      - switch.lg_left
+      - switch.lg_right
+      - switch.stereo_input_cd
+      - switch.stereo_input_tv
+      - switch.lg_ok
+      - switch.christmas_lights_m_t
+
+  jon_devices:
+    name: Jon Devices
+    entities:
+      - binary_sensor.jon_home
+      - device_tracker.homeassistant_obsidian_owntracks
+      - device_tracker.obsidian
+      - device_tracker.obsidian_ios
+      - automation.j_arrive_notification
+      - automation.j_leave_notification
+
+  location:
+    name: Location
+    entities:
+      - binary_sensor.jon_home
+      - binary_sensor.danielle_home
+
+  log_file_automations:
+    name: Log File automations
+    entities:
+    - automation.notify_j_ios_arrival
+    - automation.notify_j_ios_leave
+    - automation.notify_j_mac_arrival
+    - automation.notify_j_mac_leave
+    - automation.notify_j_owncloud_arrival
+    - automation.notify_j_owncloud_leave
+
+  danielle_devices:
+    name: Danielle Devices
+    entities:
+      #- binary_sensor.jon_home
+      - device_tracker.daniellsmacbook
+      - device_tracker.daniellplewatch
+      - device_tracker.daniellesiphone

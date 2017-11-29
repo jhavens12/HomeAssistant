@@ -1,0 +1,97 @@
+- name: Night
+  entities:
+    light.dining_room_1: off
+    light.dining_room_2: off
+    light.dining_room_3: off
+    light.wall: off
+    light.cabinets: off
+    light.overhead: off
+    light.big_lamp: off
+    light.sink:
+      state: on
+      brightness: 75
+    light.small_lamp:
+      state: on
+      brightness: 125
+    switch.glass_door: on
+    switch.twinkle: on
+
+- name: Wake Up
+  entities:
+    light.wall:
+      state: on
+      brightness: 255
+    light.cabinets:
+      state: on
+      brightness: 255
+    light.sink:
+      state: on
+      brightness: 255
+    light.overhead:
+      state: on
+      brightness: 255
+    light.dining_room_1: off
+    light.dining_room_2: off
+    light.dining_room_3: off
+    light.small_lamp:
+      state: on
+      brightness: 255
+    light.big_lamp: off
+    switch.twinkle: off
+    switch.glass_door: on
+    group.seasonal: on
+
+- name: switches_and_lights_off
+  entities:
+    group.all_lights: off
+    switch.twinkle: off
+    switch.glass_door: off
+    switch.christmas_lights_m_t: off
+    group.seasonal: off
+
+#used for "sleep" script
+- name: downstairs_switches_and_lights_off
+  entities:
+    light.wall: off
+    light.cabinets: off
+    light.sink: off
+    light.overhead: off
+    light.dining_room_1: off
+    light.dining_room_2: off
+    light.dining_room_3: off
+    light.small_lamp: off
+    light.big_lamp: off
+    switch.twinkle: off
+    switch.glass_door: off
+    switch.christmas_lights_m_t: off
+    group.seasonal: off
+
+#bedroom
+- name: Dim
+  entities:
+    light.bedroom_1:
+      state: on
+      brightness: 1
+    light.bedroom_2:
+      state: on
+      brightness: 1
+
+#bedroom
+- name: Bright
+  entities:
+    light.bedroom_1:
+      state: on
+      brightness: 255
+    light.bedroom_2:
+      state: on
+      brightness: 255
+
+#bedroom
+- name: Mid
+  entities:
+    light.bedroom_1:
+      state: on
+      brightness: 120
+    light.bedroom_2:
+      state: on
+      brightness: 120

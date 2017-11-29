@@ -1,0 +1,39 @@
+media_center_on:
+  alias: TV_ON
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.lg_onoff
+    - service: switch.turn_on
+      entity_id: switch.stereo_onoff
+    - delay:
+        seconds: 7
+    - service: switch.turn_on
+      entity_id: switch.lg_home
+    - delay:
+        seconds: 2
+    - service: switch.turn_on
+      entity_id: switch.lg_ok
+
+media_center_off:
+  alias: TV_OFF
+  sequence:
+    - service: switch.turn_off
+      entity_id: switch.stereo_onoff
+    - service: media_player.turn_off
+      entity_id: media_player.living_room_lg
+
+movie_time:
+  alias: Movie Time
+  sequence:
+    - service: script.turn_on
+      entity_id: script.media_center_on
+    - service: scene.turn_on
+      entity_id: scene.night
+
+sleep:
+  alias: Sleep
+  sequence:
+    - service: script.turn_on
+      entity_id: script.media_center_off
+    - service: scene.turn_on
+      entity_id: scene.downstairs_switches_and_lights_off

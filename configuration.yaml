@@ -1,0 +1,167 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 176
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+  # Customization file
+  customize: !include customize.yaml
+
+zone:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  radius: 280
+  icon: mdi:home
+
+zone 2:
+  name: Swanton
+  latitude: !secret swanton_latitude
+  longitude: !secret swanton_longitude
+  radius: 280
+  icon: mdi:school
+
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  api_password: !secret api_password
+  ssl_certificate: /config/ssl/fullchain.pem
+  ssl_key: /config/ssl/privkey.pem
+  base_url: !secret base_url
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+ios:
+
+notify:
+  - name: pushover
+    platform: pushover
+    api_key: !secret pushover_api_key
+    user_key: !secret pushover_user_key
+  - name: file
+    platform: file
+    filename: /config/notify.log
+    timestamp: True
+
+# Weather prediction
+sensor:
+  - platform: yr
+  - platform: broadlink
+    host: 10.0.1.133
+    mac: !secret broadlink_mac
+    monitored_conditions:
+      - temperature
+
+# Text to speech
+tts:
+  - platform: google
+
+light:
+  - platform: lifx
+    broadcast: 10.0.1.255
+  - platform: hue
+
+media_player:
+  - platform: webostv
+    host: 10.0.1.210
+    mac: !secret living_room_lg_mac
+    name: Living Room LG
+    customize:
+      sources:
+        - youtube
+
+mqtt:
+
+device_tracker:
+  - platform: ddwrt
+    host: 10.0.1.1
+    username: !secret ddwrt_username
+    password: !secret ddwrt_password
+    track_new_devices: yes
+    interval_seconds: 12
+    consider_home: 180
+  - platform: nmap_tracker
+    hosts: 10.0.1.1/24
+  - platform: owntracks
+    max_gps_accuracy: 200
+    waypoints: True
+
+binary_sensor:
+  - platform: 'bayesian'
+    prior: 0.6
+    name: 'Jon Home'
+    probability_threshold: 0.82
+    observations:
+      - entity_id: 'device_tracker.obsidian_ios'
+        prob_given_true: 0.8
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: 'device_tracker.homeassistant_obsidian_owntracks'
+        prob_given_true: 0.9
+        prob_given_false: 0.1
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: 'device_tracker.obsidian'
+        prob_given_true: 0.6
+        prob_given_false: 0.4
+        platform: 'state'
+        to_state: 'home'
+  - platform: 'bayesian'
+    prior: 0.6
+    name: 'Danielle Home'
+    probability_threshold: 0.7
+    observations:
+      - entity_id: 'device_tracker.daniellesiphone'
+        prob_given_true: 0.8
+        prob_given_false: 0.3
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: 'device_tracker.daniellplewatch'
+        prob_given_true: 0.9
+        prob_given_false: 0.1
+        platform: 'state'
+        to_state: 'home'
+
+############################################################
+#Includes
+############################################################
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scene.yaml
+switch: !include switch.yaml

@@ -1,0 +1,269 @@
+media_player.living_room_lg:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+sensor.sabnzbd_status:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+light.sink:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:ceiling-light
+light.wall:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:lightbulb-outline
+light.small_lamp:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:lamp
+light.overhead:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:ceiling-light
+media_player.kevin:
+  haaska_hidden: 'True'
+  hidden: true
+  homebridge_hidden: true
+switch.twinkle:
+  haaska_hidden: 'True'
+  homebridge_visible: 'true'
+  icon: mdi:star-outline
+switch.salt_rock:
+  homebridge_visible: 'true'
+switch.glass_door:
+  haaska_hidden: 'True'
+  homebridge_visible: 'true'
+  icon: mdi:star-outline
+light.cabinets:
+  haaska_hidden: 'True'
+  homebridge_visible: 'true'
+  icon: mdi:alarm-light
+switch.stereo_onoff:
+  haaska_hidden: 'True'
+  homebridge_name: Stereo
+  homebridge_visible: 'true'
+  icon: mdi:power
+switch.lg_onoff:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  homebridge_name: Television
+  icon: mdi:power
+group.all_lights:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+light.bedroom:
+  haaska_hidden: 'True'
+  hidden: true
+  icon: mdi:group
+light.bedroom_2:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:lamp
+light.big_lamp:
+  haaska_hidden: 'True'
+  icon: mdi:spotlight-beam
+sensor.broadlink_sensor_temperature:
+  friendly_name: Temp
+  haaska_hidden: 'True'
+light.dining_room_1:
+  haaska_hidden: 'True'
+  icon: mdi:ceiling-light
+light.dining_room_2:
+  haaska_hidden: 'True'
+  icon: mdi:ceiling-light
+light.dining_room_3:
+  haaska_hidden: 'True'
+  icon: mdi:ceiling-light
+sun.sun:
+  haaska_hidden: 'True'
+updater.updater:
+  haaska_hidden: 'True'
+group.all_switches:
+  haaska_hidden: 'True'
+sensor.yr_symbol:
+  haaska_hidden: 'True'
+group.all_scripts:
+  haaska_hidden: 'True'
+light.all_hue_lights:
+  haaska_hidden: 'True'
+  hidden: true
+  homebridge_hidden: true
+switch.christmas_lights_m_t:
+  friendly_name: RGB Christmas Lights
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:pine-tree
+switch.lg_down:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:arrow-down
+switch.lg_home:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:home
+switch.lg_left:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:arrow-left
+switch.lg_ok:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:check
+switch.lg_pause:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:pause
+switch.lg_play:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:play
+switch.lg_right:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:arrow-right
+switch.lg_up:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:arrow-up
+light.living_room:
+  haaska_hidden: 'True'
+  hidden: true
+  homebridge_hidden: true
+switch.stereo_input_cd:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:music-circle
+switch.stereo_input_tv:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+  icon: mdi:television
+media_player.unnamed_device:
+  haaska_hidden: 'True'
+  homebridge_hidden: true
+light.dining_room:
+  haaska_hidden: 'True'
+  hidden: true
+  homebridge_hidden: true
+light.downstairs:
+  haaska_hidden: 'True'
+  hidden: true
+  homebridge_hidden: true
+group.broadlink:
+  haaska_hidden: 'True'
+light.kitchen:
+  haaska_hidden: 'True'
+  hidden: true
+  homebridge_hidden: true
+light.bedroom_2_2:
+  haaska_hidden: 'True'
+  icon: mdi:lamp
+light.bedroom_3:
+  haaska_hidden: 'True'
+  icon: mdi:lamp
+scene.switches_and_lights_off:
+  haaska_hidden: 'True'
+  hidden: true
+scene.night:
+  haaska_hidden: 'True'
+  hidden: true
+  icon: mdi:weather-sunset-down
+script.media_center_on:
+  icon: mdi:power-plug
+script.media_center_off:
+  icon: mdi:power-plug-off
+scene.wake_up:
+  icon: mdi:white-balance-sunny
+automation.temp_low_check:
+  icon: mdi:temperature-fahrenheit
+script.sleep:
+  icon: mdi:sleep
+script.movie_time:
+  icon: mdi:movie
+device_tracker.08863bc2ce31:
+  hidden: true
+device_tracker.94103ecf8a93:
+  hidden: true
+device_tracker.d073d514a1b2:
+  hidden: true
+device_tracker.d0e7827bc515:
+  hidden: true
+sensor.obsidian_battery_state:
+  hidden: true
+device_tracker.f0272d51fd4f:
+  hidden: true
+device_tracker.b4430deef3a2:
+  hidden: true
+sensor.obsidian_battery_level:
+  hidden: true
+automation.notify_j_owncloud_arrival:
+  icon: mdi:check
+automation.notify_j_ios_arrival:
+  icon: mdi:check
+automation.notify_j_mac_arrival:
+  icon: mdi:check
+automation.j_arrive_notification:
+  icon: mdi:check
+automation.j_leave_notification:
+  icon: mdi:exit-to-app
+automation.notify_j_mac_leave:
+  icon: mdi:exit-to-app
+automation.notify_j_ios_leave:
+  icon: mdi:exit-to-app
+automation.notify_j_owncloud_leave:
+  icon: mdi:exit-to-app
+automation.temperature_sensor:
+  icon: mdi:temperature-fahrenheit
+scene.downstairs_switches_and_lights_off:
+  haaska_hidden: 'True'
+  hidden: true
+scene.dim:
+  haaska_hidden: 'True'
+  icon: mdi:brightness-3
+scene.bright:
+  haaska_hidden: 'True'
+  icon: mdi:brightness-5
+scene.mid:
+  haaska_hidden: 'True'
+  icon: mdi:brightness-4
+group.bedroom:
+  haaska_hidden: 'True'
+  icon: mdi:hotel
+group.kitchen:
+  haaska_hidden: 'True'
+  icon: mdi:fridge
+group.dining_room:
+  haaska_hidden: 'True'
+  icon: mdi:ceiling-light
+group.living_room:
+  haaska_hidden: 'True'
+  icon: mdi:television
+switch.front_window:
+  haaska_hidden: 'True'
+  icon: mdi:window-closed
+switch.stairs:
+  haaska_hidden: 'True'
+  icon: mdi:stairs
+light.bedroom_1:
+  haaska_hidden: 'True'
+group.temperature:
+  haaska_hidden: 'True'
+group.location:
+  haaska_hidden: 'True'
+group.upstairs:
+  haaska_hidden: 'True'
+group.primary_view:
+  haaska_hidden: 'True'
+group.danielle_devices:
+  haaska_hidden: 'True'
+group.log_file_automations:
+  haaska_hidden: 'True'
+group.jon_devices:
+  haaska_hidden: 'True'
+group.downstairs:
+  haaska_hidden: 'True'
+group.rooms_view:
+  haaska_hidden: 'True'
+group.all_automations:
+  haaska_hidden: 'True'
+group.all_devices:
+  haaska_hidden: 'True'
