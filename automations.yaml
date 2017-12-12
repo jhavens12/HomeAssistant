@@ -132,12 +132,10 @@
     data:
       entity_id: scene.wake_up
     service: scene.turn_on
-  alias: 'J Arrive: Scene ON CONDITION: D Home 15 mins'
+  alias: 'J Arrive: Scene ON CONDITION: D Home'
   condition:
   - condition: state
     entity_id: binary_sensor.danielle_home
-    for:
-      minutes: 15
     state: 'on'
   id: '1511884863581'
   trigger:
