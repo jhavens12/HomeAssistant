@@ -136,7 +136,7 @@
   condition:
   - condition: state
     entity_id: binary_sensor.danielle_home
-    state: 'on'
+    state: 'off'
   id: '1511884863581'
   trigger:
   - entity_id: binary_sensor.jon_home
@@ -156,3 +156,29 @@
     from: 'off'
     platform: state
     to: 'on'
+- action:
+  - alias: Notify
+    data:
+      message: D arrive notify {{ now().strftime("%Y-%m-%d_%H:%M:%S") }}
+    service: notify.pushover
+  alias: D Arrive Notification
+  condition: []
+  id: '1513178328465'
+  trigger:
+  - entity_id: binary_sensor.danielle_home
+    from: 'off'
+    platform: state
+    to: 'on'
+- action:
+  - alias: Notify
+    data:
+      message: D leave notify {{ now().strftime("%Y-%m-%d_%H:%M:%S") }}
+    service: notify.pushover
+  alias: D Leave Notification
+  condition: []
+  id: '1513178386919'
+  trigger:
+  - entity_id: binary_sensor.danielle_home
+    from: 'on'
+    platform: state
+    to: 'off'
