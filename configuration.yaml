@@ -157,6 +157,10 @@ binary_sensor:
         platform: 'state'
         to_state: 'home'
 
+nest:
+  client_id: c798dd85-eb54-4569-af78-e9af4a2fe0b4
+  client_secret: AzTD28MzefIxaYVwoNyp785ZS
+
 ############################################################
 #Includes
 ############################################################

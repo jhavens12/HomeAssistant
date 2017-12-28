@@ -54,3 +54,39 @@
      command_on: shAkAA8AAgEPNA80DzQwFA81MBQPNA80DzQPNS8UDzQPNQ80MBMPNAAAAAA=
      command_off: sgCEADATDjMPMw8zDjQPMw8zMBIvEw40DzIPAAH/DzMPMw8zMBIPMzASDzMPMw40DzMPMw8zLxMvEg80DjMPAAH/DzMPMw8zMBIPMzASDzMPMw40DjQPMw8zMBIvEw40DjMPAAIADjMPMw8zMBMOMzATDjMPMw8zDzMPMw8zMBIvEw8zDgAF3AAAAAA=
      friendly_name: Christmas Lights M T
+
+- platform: mqtt
+  name: "Switch1"
+  state_topic: "ha/switch1"
+  command_topic: "ha/switch1"
+  qos: 0
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic:
+  false retain: true
+- platform: mqtt
+  name: "Switch2"
+  state_topic: "ha/switch2"
+  command_topic: "ha/switch2"
+  qos: 0
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic:
+  false retain: true
+- platform: mqtt
+  name: "ESP LED"
+  state_topic: "/ESP_01/led/state"
+  command_topic: "/ESP_01/gpio/10"
+  payload_on: "1"
+  payload_off: "0"
+  qos: 0
+  retain: true
+- platform: mqtt
+  name: "ESP Button"
+  state_topic: "/ESP_01/button/state"
+  command_topic: "/ESP_01/gpio/0"
+  payload_on: "1"
+  payload_off: "0"
+  qos: 1
+  retain: true
+
