@@ -8,7 +8,7 @@ trigger:
     offset: "-30:00:00" #30 mins before sunset
 
 action:
-  - service: group.turn_on
+  - service: homeassistant.turn_on
     data:
       entity_id: group.porch
   - service: homeassistant.turn_off #turn off auto timer when porch turned on
