@@ -1,0 +1,9 @@
+#resets the hallway timer script to stop running
+alias: "Hallway: reset timer"
+trigger:
+  - platform: state
+    entity_id: group.hallway
+    to: 'off'
+action:
+  - service: script.turn_off
+    entity_id: script.hallway_timer

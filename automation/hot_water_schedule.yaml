@@ -1,0 +1,18 @@
+#turn on hot water switch, M-F at 6:05 AM
+alias: 'Hot Water Weekdays 6:05AM'
+trigger:
+  platform: time
+  at: '06:05:00' #uses military time
+action:
+- alias: Switch On
+  service: switch.turn_on
+  data:
+    entity_id: switch.hot_water
+condition:
+- condition: time
+  weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri

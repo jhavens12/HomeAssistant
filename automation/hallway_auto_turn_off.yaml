@@ -1,0 +1,9 @@
+#triggers when hallway is turned on,  calls the hallway timer script to start
+alias: "Hallway Auto Power Off"
+trigger:
+  - platform: state
+    entity_id: group.hallway
+    to: 'on'
+action:
+  - service: script.turn_on
+    entity_id: script.hallway_timer

@@ -1,0 +1,9 @@
+#triggers when porch is turned on,  calls the porch timer script to start
+alias: "Porch Auto Power Off"
+trigger:
+  - platform: state
+    entity_id: group.porch
+    to: 'on'
+action:
+  - service: script.turn_on
+    entity_id: script.porch_timer

@@ -1,0 +1,25 @@
+#turn off porch light M-F
+alias: 'Porch Light Weekdays Off'
+trigger:
+  - platform: time
+    at: '21:00:00' #off at 9PM
+  - platform: sun
+    event: sunrise
+    offset: "+30:00:00" #30 mins after sunrise
+
+action:
+  - service: group.turn_on
+    data:
+      entity_id: group.porch
+  - service: homeassistant.turn_on #turn on auto power off when porch turned off
+    data:
+      entity_id: automation.porch_auto_power_off
+
+condition:
+- condition: time
+  weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri

@@ -1,3 +1,4 @@
+# turns on wake up scene if danielle is not home when jon arrives home
 action:
 - alias: Scene On
   data:

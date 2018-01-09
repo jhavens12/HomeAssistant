@@ -1,0 +1,9 @@
+#resets the porch timer script to stop running
+alias: "Porch: reset timer"
+trigger:
+  - platform: state
+    entity_id: group.porch
+    to: 'off'
+action:
+  - service: script.turn_off
+    entity_id: script.porch_timer

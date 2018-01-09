@@ -43,6 +43,12 @@
     light.big_lamp: off
     switch.twinkle: off
     switch.glass_door: on
+    light.hallway_1:
+      state: on
+      brightness: 255
+    light.hallway_2:
+      state: on
+      brightness: 255
     #group.seasonal: on
 
 - name: switches_and_lights_off
@@ -73,6 +79,7 @@
     switch.glass_door: off
     switch.christmas_lights_m_t: off
     group.seasonal: off
+    switch.salt_rock: off
 
 #bedroom
 - name: Dim

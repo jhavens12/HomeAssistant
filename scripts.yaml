@@ -37,3 +37,21 @@ sleep:
       entity_id: script.media_center_off
     - service: scene.turn_on
       entity_id: scene.downstairs_switches_and_lights_off
+
+#porch auto timer - turns off porch after input slider time
+porch_timer:
+  alias: "Porch Timer"
+  sequence:
+    - delay: '00:{{ states.input_slider.porch_run_time.state | int }}:00'
+    - service: homeassistant.turn_off
+      data:
+        entity_id: group.porch
+
+#hallway auto timer - turns off hallway after input slider time
+hallway_timer:
+  alias: "Hallway Timer"
+  sequence:
+    - delay: '00:{{ states.input_slider.hallway_run_time.state | int }}:00'
+    - service: homeassistant.turn_off
+      data:
+        entity_id: group.hallway

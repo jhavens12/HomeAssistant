@@ -10,6 +10,7 @@
       - group.location
       #- group.seasonal
       - camera.ip_webcam
+      - group.configuration
 
   rooms_view:
     name: Rooms
@@ -69,16 +70,12 @@
   downstairs:
     name: Downstairs
     entities:
-#      - sensor.broadlink_sensor_temperature
-#      - sensor.downstairs_thermostat_target
-#      - sensor.downstairs_thermostat_temperature
-#      - sensor.downstairs_thermostat_humidity
       - climate.downstairs
       - group.living_room
       - group.dining_room
       - group.kitchen
       - group.hallway
-      #- group.porch
+      - switch.hot_water
       - script.movie_time
       - script.sleep
       - scene.wake_up
@@ -90,6 +87,7 @@
       - scene.bright
       - scene.mid
       - scene.dim
+      - switch.salt_rock
 
   outside:
     name: Outside
@@ -157,8 +155,8 @@
     - automation.log_d_watch_arrival
     - automation.log_d_watch_leave
 
-  danielle:
-    name: Danielle
+  danielle_devices:
+    name: Danielle Devices
     entities:
       - binary_sensor.danielle_home
       - device_tracker.daniellsmacbook
@@ -167,11 +165,17 @@
       - automation.d_arrive_notification
       - automation.d_leave_notification
 
-
-  # danielle_devices:
-  #   name: Danielle Devices
-  #   entities:
-  #     #- binary_sensor.jon_home
-  #     - device_tracker.daniellsmacbook
-  #     - device_tracker.daniellplewatch
-  #     - device_tracker.daniellesiphone
+  configuration:
+    name: Configuration
+    entities:
+      - automation.porch_auto_power_off
+      - input_slider.porch_run_time
+      - automation.porch_reset_timer
+      - script.porch_timer
+      - automation.hallway_auto_power_off
+      - input_slider.hallway_run_time
+      - automation.hallway_reset_timer
+      - script.hallway_timer
+      - automation.hot_water_weekdays_605am
+      - automation.porch_light_weekdays_on
+      - automation.porch_light_weekdays_off

@@ -165,6 +165,24 @@ nest:
   client_id: c798dd85-eb54-4569-af78-e9af4a2fe0b4
   client_secret: AzTD28MzefIxaYVwoNyp785ZS
 
+android_ip_webcam:
+  - host: 10.0.1.135
+    port: 8080
+
+#sets up timer for the porch timer  with input slider
+input_slider:
+  porch_run_time:
+    name: Porch Run Time
+    initial: 60
+    min: 5
+    max: 120
+    step: 5
+  hallway_run_time:
+    name: Hallway Run Time
+    initial: 5
+    min: 5
+    max: 30
+    step: 5
 ############################################################
 #Includes
 ############################################################
@@ -174,8 +192,3 @@ automation: !include_dir_list automation/
 script: !include scripts.yaml
 scene: !include scene.yaml
 switch: !include switch.yaml
-
-
-android_ip_webcam:
-  - host: 10.0.1.135
-    port: 8080

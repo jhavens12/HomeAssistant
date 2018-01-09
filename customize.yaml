@@ -30,6 +30,7 @@ switch.twinkle:
   icon: mdi:star-outline
 switch.salt_rock:
   homebridge_visible: 'true'
+  icon: mdi:lamp
 switch.glass_door:
   haaska_hidden: 'True'
   homebridge_visible: 'true'
@@ -279,3 +280,31 @@ group.porch:
   icon: mdi:logout
 climate.downstairs:
   friendly_name: Thermostat
+automation.porch_reset_timer:
+  haaska_hidden: 'true'
+  hidden: true
+script.porch_timer:
+  haaska_hidden: 'true'
+  hidden: true
+automation.auto_power_off:
+  icon: mdi:camera-timer
+input_slider.porch_run_time: {}
+automation.hallway_reset_timer:
+  haaska_hidden: 'true'
+  hidden: true
+script.hallway_timer:
+  haaska_hidden: 'True'
+  hidden: true
+switch.hot_water:
+  icon: mdi:kettle
+automation.hot_water_weekdays_605am:
+  icon: mdi:kettle
+automation.porch_light_weekdays_on:
+  icon: mdi:power-plug
+automation.porch_light_weekdays_off:
+  icon: mdi:power-plug-off
+automation.hallway_auto_power_off:
+  icon: mdi:timer
+input_slider.hallway_run_time: {}
+automation.porch_auto_power_off:
+  icon: mdi:timer
