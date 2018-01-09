@@ -6,8 +6,10 @@
     entities:
       - group.downstairs
       - group.upstairs
+      - group.outside
       - group.location
-      - group.seasonal
+      #- group.seasonal
+      - camera.ip_webcam
 
   rooms_view:
     name: Rooms
@@ -17,6 +19,8 @@
       - group.dining_room
       - group.living_room
       - group.bedroom
+      - group.hallway
+      - group.porch
 
 #not views
 #Rooms
@@ -49,17 +53,32 @@
       - light.bedroom_1
       - light.bedroom_2
 
+  hallway:
+    name: Hallway
+    entities:
+      - light.hallway_1
+      - light.hallway_2
+
+  porch:
+    name: Porch
+    entities:
+      - light.porch_1
+      - light.porch_2
+
 ###
   downstairs:
     name: Downstairs
     entities:
-      - sensor.broadlink_sensor_temperature
-      - sensor.downstairs_thermostat_target
-      - sensor.downstairs_thermostat_temperature
-      - sensor.downstairs_thermostat_humidity
+#      - sensor.broadlink_sensor_temperature
+#      - sensor.downstairs_thermostat_target
+#      - sensor.downstairs_thermostat_temperature
+#      - sensor.downstairs_thermostat_humidity
+      - climate.downstairs
       - group.living_room
       - group.dining_room
       - group.kitchen
+      - group.hallway
+      #- group.porch
       - script.movie_time
       - script.sleep
       - scene.wake_up
@@ -72,10 +91,15 @@
       - scene.mid
       - scene.dim
 
-  temperature:
-    name: Temperature
+  outside:
+    name: Outside
     entities:
-      - sensor.broadlink_sensor_temperature
+      - group.porch
+
+  # temperature:
+  #   name: Temperature
+  #   entities:
+  #     - sensor.broadlink_sensor_temperature
 
   seasonal:
     name: Seasonal
@@ -110,6 +134,8 @@
       - device_tracker.obsidian_ios
       - automation.j_arrive_notification
       - automation.j_leave_notification
+      - automation.j_arrive_scene_on_condition_d_home
+      - automation.j_arrive_switch_on_condition_none
 
   location:
     name: Location
@@ -120,17 +146,32 @@
   log_file_automations:
     name: Log File automations
     entities:
-    - automation.notify_j_ios_arrival
-    - automation.notify_j_ios_leave
-    - automation.notify_j_mac_arrival
-    - automation.notify_j_mac_leave
-    - automation.notify_j_owncloud_arrival
-    - automation.notify_j_owncloud_leave
+    - automation.log_j_ios_arrival
+    - automation.log_j_ios_leave
+    - automation.log_j_mac_arrival
+    - automation.log_j_mac_leave
+    - automation.log_j_owntracks_arrival
+    - automation.log_j_owntracks_leave
+    - automation.log_d_mac_arrival
+    - automation.log_d_mac_leave
+    - automation.log_d_watch_arrival
+    - automation.log_d_watch_leave
 
-  danielle_devices:
-    name: Danielle Devices
+  danielle:
+    name: Danielle
     entities:
-      #- binary_sensor.jon_home
+      - binary_sensor.danielle_home
       - device_tracker.daniellsmacbook
       - device_tracker.daniellplewatch
       - device_tracker.daniellesiphone
+      - automation.d_arrive_notification
+      - automation.d_leave_notification
+
+
+  # danielle_devices:
+  #   name: Danielle Devices
+  #   entities:
+  #     #- binary_sensor.jon_home
+  #     - device_tracker.daniellsmacbook
+  #     - device_tracker.daniellplewatch
+  #     - device_tracker.daniellesiphone

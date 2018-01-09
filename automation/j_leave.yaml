@@ -1,0 +1,21 @@
+action:
+- alias: Notify
+  data:
+    message: J leave notify {{ now().strftime("%Y-%m-%d_%H:%M:%S") }}
+  service: notify.pushover
+- alias: Notify
+  data:
+    message: BINARY SENSOR CHANGE to OFF (NOT HOME) {{ now().strftime("%Y-%m-%d_%H:%M:%S")
+      }}
+  service: notify.file
+- alias: Switch Off
+  data:
+    entity_id: switch.front_window
+  service: switch.turn_off
+alias: J Leave Notification
+condition: []
+trigger:
+- entity_id: binary_sensor.jon_home
+  from: 'on'
+  platform: state
+  to: 'off'

@@ -1,0 +1,12 @@
+action:
+- alias: Notify
+  data:
+    message: NOTIFY D WATCH Arrival {{ now().strftime("%Y-%m-%d_%H:%M:%S") }}
+  service: notify.file2
+alias: log D WATCH arrival
+condition: []
+trigger:
+- entity_id: device_tracker.daniellplewatch
+  from: not_home
+  platform: state
+  to: home

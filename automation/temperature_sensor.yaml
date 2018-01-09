@@ -1,0 +1,10 @@
+action:
+- data:
+    message: 'Temp LOW: {{ states.sensor.broadlink_sensor_temperature.state }}'
+  service: notify.pushover
+alias: Temperature Sensor
+condition: []
+trigger:
+- below: '50'
+  entity_id: sensor.broadlink_sensor_temperature
+  platform: numeric_state

@@ -1,0 +1,12 @@
+action:
+- alias: Notify
+  data:
+    message: NOTIFY J Owncloud Arrival {{ now().strftime("%Y-%m-%d_%H:%M:%S") }}
+  service: notify.file
+alias: log J owntracks arrival
+condition: []
+trigger:
+- entity_id: device_tracker.homeassistant_obsidian_owntracks
+  from: not_home
+  platform: state
+  to: home

@@ -267,3 +267,15 @@ group.all_automations:
   haaska_hidden: 'True'
 group.all_devices:
   haaska_hidden: 'True'
+group.hallway:
+  icon: mdi:broom
+light.hallway:
+  haaska_hidden: 'True'
+  hidden: true
+light.porch:
+  haaska_hidden: 'True'
+  hidden: true
+group.porch:
+  icon: mdi:logout
+climate.downstairs:
+  friendly_name: Thermostat

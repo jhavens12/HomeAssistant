@@ -1,0 +1,17 @@
+action:
+# - alias: Notify
+#   data:
+#     message: D arrive notify {{ now().strftime("%Y-%m-%d_%H:%M:%S") }} service:
+#   notify.pushover
+- alias: Notify
+  data:
+    message: BINARY SENSOR CHANGE to ON (HOME) {{ now().strftime("%Y-%m-%d_%H:%M:%S")
+      }}
+  service: notify.file2
+alias: D Arrive Notification
+condition: []
+trigger:
+- entity_id: binary_sensor.danielle_home
+  from: 'off'
+  platform: state
+  to: 'on'

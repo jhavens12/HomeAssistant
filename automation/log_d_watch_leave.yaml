@@ -1,0 +1,12 @@
+action:
+- alias: Notify
+  data:
+    message: NOTIFY D WATCH Leave {{ now().strftime("%Y-%m-%d_%H:%M:%S") }}
+  service: notify.file2
+alias: log D WATCH leave
+condition: []
+trigger:
+- entity_id: device_tracker.daniellplewatch
+  from: home
+  platform: state
+  to: not_home

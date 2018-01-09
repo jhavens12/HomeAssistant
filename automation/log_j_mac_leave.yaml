@@ -1,0 +1,12 @@
+action:
+- alias: Notify
+  data:
+    message: NOTIFY J MAC Leave {{ now().strftime("%Y-%m-%d_%H:%M:%S") }}
+  service: notify.file
+alias: log J MAC leave
+condition: []
+trigger:
+- entity_id: device_tracker.obsidian
+  from: home
+  platform: state
+  to: not_home

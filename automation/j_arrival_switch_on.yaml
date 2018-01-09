@@ -1,0 +1,12 @@
+action:
+- alias: Front Light On
+  data:
+    entity_id: switch.front_window
+  service: switch.turn_on
+alias: 'J Arrive: Switch On CONDITION: None'
+condition: []
+trigger:
+- entity_id: binary_sensor.jon_home
+  from: 'off'
+  platform: state
+  to: 'on'

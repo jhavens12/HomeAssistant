@@ -1,3 +1,4 @@
+# used with "movie time"
 - name: Night
   entities:
     light.dining_room_1: off
@@ -13,9 +14,12 @@
     light.small_lamp:
       state: on
       brightness: 125
+    light.hallway_1: off
+    light.hallway_2: off
     switch.glass_door: on
     switch.twinkle: on
 
+# preset used with alexa "wake up"
 - name: Wake Up
   entities:
     light.wall:
@@ -39,7 +43,7 @@
     light.big_lamp: off
     switch.twinkle: off
     switch.glass_door: on
-    group.seasonal: on
+    #group.seasonal: on
 
 - name: switches_and_lights_off
   entities:
@@ -61,6 +65,10 @@
     light.dining_room_3: off
     light.small_lamp: off
     light.big_lamp: off
+    light.porch_1: off
+    light.porch_1: off
+    light.hallway_1: off
+    light.hallway_2: off
     switch.twinkle: off
     switch.glass_door: off
     switch.christmas_lights_m_t: off

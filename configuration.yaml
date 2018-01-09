@@ -76,6 +76,10 @@ notify:
     platform: file
     filename: /config/notify.log
     timestamp: True
+  - name: file2
+    platform: file
+    filename: /config/notify_danielle.log
+    timestamp: True
 
 # Weather prediction
 sensor:
@@ -148,12 +152,12 @@ binary_sensor:
     observations:
       - entity_id: 'device_tracker.daniellesiphone'
         prob_given_true: 0.8
-        prob_given_false: 0.3
+        prob_given_false: 0.2
         platform: 'state'
         to_state: 'home'
       - entity_id: 'device_tracker.daniellplewatch'
         prob_given_true: 0.9
-        prob_given_false: 0.1
+        prob_given_false: 0.2
         platform: 'state'
         to_state: 'home'
 
@@ -166,7 +170,12 @@ nest:
 ############################################################
 
 group: !include groups.yaml
-automation: !include automations.yaml
+automation: !include_dir_list automation/
 script: !include scripts.yaml
 scene: !include scene.yaml
 switch: !include switch.yaml
+
+
+android_ip_webcam:
+  - host: 10.0.1.135
+    port: 8080

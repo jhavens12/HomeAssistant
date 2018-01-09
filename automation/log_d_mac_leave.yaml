@@ -1,0 +1,12 @@
+action:
+- alias: Notify
+  data:
+    message: NOTIFY D MAC Leave {{ now().strftime("%Y-%m-%d_%H:%M:%S") }}
+  service: notify.file2
+alias: log D MAC leave
+condition: []
+trigger:
+- entity_id: device_tracker.daniellesiphone
+  from: home
+  platform: state
+  to: not_home

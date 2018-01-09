@@ -1,0 +1,15 @@
+action:
+- alias: Scene On
+  data:
+    entity_id: scene.wake_up
+  service: scene.turn_on
+alias: 'J Arrive: Scene ON CONDITION: D Home'
+condition:
+- condition: state
+  entity_id: binary_sensor.danielle_home
+  state: 'off'
+trigger:
+- entity_id: binary_sensor.jon_home
+  from: 'off'
+  platform: state
+  to: 'on'
