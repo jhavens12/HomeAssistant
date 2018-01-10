@@ -136,7 +136,7 @@ binary_sensor:
         platform: 'state'
         to_state: 'home'
       - entity_id: 'device_tracker.homeassistant_obsidian_owntracks'
-        prob_given_true: 0.9
+        prob_given_true: 0.8
         prob_given_false: 0.1
         platform: 'state'
         to_state: 'home'
@@ -180,7 +180,7 @@ input_slider:
   hallway_run_time:
     name: Hallway Run Time
     initial: 5
-    min: 5
+    min: 1
     max: 30
     step: 5
 ############################################################

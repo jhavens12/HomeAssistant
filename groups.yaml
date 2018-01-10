@@ -1,5 +1,5 @@
 #Views
-
+  #default_view:
   primary_view:
     name: Primary
     view: yes
@@ -79,6 +79,7 @@
       - script.movie_time
       - script.sleep
       - scene.wake_up
+      - script.doorbell
 
   upstairs:
     name: Upstairs

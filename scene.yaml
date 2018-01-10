@@ -60,26 +60,32 @@
     group.seasonal: off
 
 #used for "sleep" script
-- name: downstairs_switches_and_lights_off
+- name: sleep_scene
   entities:
+    #kitchen
     light.wall: off
     light.cabinets: off
     light.sink: off
     light.overhead: off
+    #dining_room
     light.dining_room_1: off
     light.dining_room_2: off
     light.dining_room_3: off
+    #living_room
     light.small_lamp: off
     light.big_lamp: off
-    light.porch_1: off
-    light.porch_1: off
-    light.hallway_1: off
-    light.hallway_2: off
     switch.twinkle: off
     switch.glass_door: off
-    switch.christmas_lights_m_t: off
+    #other
     group.seasonal: off
     switch.salt_rock: off
+    #turn on hallway for timed period
+    light.hallway_1:
+      state: on
+      brightness: 255
+    light.hallway_2:
+      state: on
+      brightness: 255
 
 #bedroom
 - name: Dim

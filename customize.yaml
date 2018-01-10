@@ -308,3 +308,5 @@ automation.hallway_auto_power_off:
 input_slider.hallway_run_time: {}
 automation.porch_auto_power_off:
   icon: mdi:timer
+script.doorbell:
+  icon: mdi:bell

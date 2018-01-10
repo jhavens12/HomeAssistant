@@ -1,3 +1,50 @@
+doorbell:
+  alias: Doorbell
+  sequence:
+    - service: homeassistant.turn_on
+      entity_id: group.hallway
+    - condition: state #condition, porch must already be turned off to not mess with timers/schedule
+      entity_id: group.porch
+      state: 'off'
+    - service: homeassistant.turn_on
+      entity_id: group.porch
+
+
+movie_time:
+  alias: Movie Time
+  sequence:
+    - service: script.turn_on
+      entity_id: script.media_center_on
+    - service: scene.turn_on
+      entity_id: scene.night
+
+sleep:
+  alias: Sleep
+  sequence:
+    - service: script.turn_on
+      entity_id: script.media_center_off
+    - service: scene.turn_on
+      entity_id: scene.sleep_scene
+
+#porch auto timer - turns off porch after input slider time
+porch_timer:
+  alias: "Porch Timer"
+  sequence:
+    - delay: '00:{{ states.input_slider.porch_run_time.state | int }}:00'
+    - service: homeassistant.turn_off
+      data:
+        entity_id: group.porch
+
+#hallway auto timer - turns off hallway after input slider time
+hallway_timer:
+  alias: "Hallway Timer"
+  sequence:
+    - delay: '00:{{ states.input_slider.hallway_run_time.state | int }}:00'
+    - service: homeassistant.turn_off
+      data:
+        entity_id: group.hallway
+
+#turn on media center and choose first app
 media_center_on:
   alias: TV_ON
   sequence:
@@ -21,37 +68,3 @@ media_center_off:
       entity_id: switch.stereo_onoff
     - service: media_player.turn_off
       entity_id: media_player.living_room_lg
-
-movie_time:
-  alias: Movie Time
-  sequence:
-    - service: script.turn_on
-      entity_id: script.media_center_on
-    - service: scene.turn_on
-      entity_id: scene.night
-
-sleep:
-  alias: Sleep
-  sequence:
-    - service: script.turn_on
-      entity_id: script.media_center_off
-    - service: scene.turn_on
-      entity_id: scene.downstairs_switches_and_lights_off
-
-#porch auto timer - turns off porch after input slider time
-porch_timer:
-  alias: "Porch Timer"
-  sequence:
-    - delay: '00:{{ states.input_slider.porch_run_time.state | int }}:00'
-    - service: homeassistant.turn_off
-      data:
-        entity_id: group.porch
-
-#hallway auto timer - turns off hallway after input slider time
-hallway_timer:
-  alias: "Hallway Timer"
-  sequence:
-    - delay: '00:{{ states.input_slider.hallway_run_time.state | int }}:00'
-    - service: homeassistant.turn_off
-      data:
-        entity_id: group.hallway
