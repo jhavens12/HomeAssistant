@@ -1,9 +1,9 @@
 action:
-# - alias: Notify
-#   data:
-#     message: D leave notify {{ now().strftime("%Y-%m-%d_%H:%M:%S") }} service:
-#   notify.pushover
 - alias: Notify
+  data:
+    message: D leave notify {{ now().strftime("%Y-%m-%d_%H:%M:%S") }}
+  service: notify.pushover
+- alias: Log File
   data:
     message: BINARY SENSOR CHANGE to OFF (AWAY) {{ now().strftime("%Y-%m-%d_%H:%M:%S")
       }}
